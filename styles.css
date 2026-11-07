@@ -209,7 +209,7 @@ a { color: var(--azul); }
   .hero-art {
     display: block; position: relative; margin-top: 2.25rem; height: clamp(220px, 52vw, 380px);
     border-radius: 20px; overflow: hidden;
-    background: url("hero-lonquimay.jpg") 72% 45% / cover no-repeat;
+    background: url("hero-lonquimay-m.jpg") 75% 45% / cover no-repeat;
     box-shadow: 0 0 0 1px rgb(255 255 255 / .1), 0 24px 48px -20px rgb(0 0 0 / .7);
   }
   .hero-art::after {
