@@ -47,16 +47,14 @@ a { color: var(--azul); }
   background: var(--noche); color: var(--blanco);
 }
 .stage::before {
-  content: ""; position: absolute; inset: 0 0 0 auto; width: min(62%, 980px); z-index: -2;
-  background: url("hero-montana.jpg") center / cover no-repeat;
-  -webkit-mask-image: linear-gradient(90deg, transparent 0%, #000 40%);
-  mask-image: linear-gradient(90deg, transparent 0%, #000 40%);
+  content: ""; position: absolute; inset: 0; z-index: -2;
+  background: url("hero-lonquimay.jpg") 70% center / cover no-repeat;
 }
 .stage::after {
   content: ""; position: absolute; inset: 0; z-index: -1;
   background:
-    linear-gradient(90deg, var(--noche) 30%, rgb(11 21 48 / .75) 48%, rgb(11 21 48 / 0) 75%),
-    linear-gradient(0deg, var(--noche) 0%, rgb(11 21 48 / 0) 30%);
+    linear-gradient(90deg, rgb(11 21 48 / .92) 0%, rgb(11 21 48 / .8) 34%, rgb(11 21 48 / 0) 62%),
+    linear-gradient(0deg, rgb(11 21 48 / .95) 0%, rgb(11 21 48 / .55) 16%, rgb(11 21 48 / 0) 34%);
 }
 
 /* Header */
@@ -211,7 +209,7 @@ a { color: var(--azul); }
   .hero-art {
     display: block; position: relative; margin-top: 2.25rem; height: clamp(220px, 52vw, 380px);
     border-radius: 20px; overflow: hidden;
-    background: url("hero-montana.jpg") center 35% / cover no-repeat;
+    background: url("hero-lonquimay.jpg") 72% 45% / cover no-repeat;
     box-shadow: 0 0 0 1px rgb(255 255 255 / .1), 0 24px 48px -20px rgb(0 0 0 / .7);
   }
   .hero-art::after {
