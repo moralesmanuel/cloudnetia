@@ -31,8 +31,11 @@
             <img src="logo.svg" alt="" width="52" height="40">
             <span class="brand-name">Cloudnet</span>
           </a>
-          <nav aria-label="Principal">
-            <ul class="nav">
+          <nav aria-label="Principal" class="nav-wrap">
+            <button class="menu-btn" type="button" aria-expanded="false" aria-controls="menu" aria-label="Abrir menú">
+              <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 7h16M4 12h16M4 17h16"/></svg>
+            </button>
+            <ul class="nav" id="menu">
               <li><a href="#soluciones">Soluciones</a></li>
               <li><a href="#agente">Cómo se ve</a></li>
               <li><a href="#proceso">Cómo trabajamos</a></li>
@@ -51,6 +54,7 @@
             <a class="btn btn-primary" href="#soluciones">Descubre nuestras soluciones</a>
             <a class="btn btn-ghost" href="#contacto">Agenda un diagnóstico</a>
           </div>
+          <div class="hero-art" aria-hidden="true"></div>
         </div>
 
         <div class="wrap">
@@ -157,6 +161,20 @@
     </div>
   </footer>
 
-  <script>document.getElementById('year').textContent = new Date().getFullYear();</script>
+  <script>
+    document.getElementById('year').textContent = new Date().getFullYear();
+    (function () {
+      var btn = document.querySelector('.menu-btn');
+      var menu = document.getElementById('menu');
+      function set(open) {
+        btn.setAttribute('aria-expanded', String(open));
+        btn.setAttribute('aria-label', open ? 'Cerrar menú' : 'Abrir menú');
+        menu.classList.toggle('is-open', open);
+      }
+      btn.addEventListener('click', function () { set(btn.getAttribute('aria-expanded') !== 'true'); });
+      menu.addEventListener('click', function (e) { if (e.target.closest('a')) set(false); });
+      document.addEventListener('keydown', function (e) { if (e.key === 'Escape') { set(false); } });
+    })();
+  </script>
 </body>
 </html>

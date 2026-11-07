@@ -177,19 +177,58 @@ a { color: var(--azul); }
 .foot-inner { display: flex; flex-wrap: wrap; gap: .5rem 2rem; justify-content: space-between; align-items: baseline; font-size: var(--step--1); }
 .foot .brand-name { color: var(--blanco); font-size: 1.2rem; }
 
-@media (max-width: 960px) {
-  .stage::before { width: 100%; opacity: .45; -webkit-mask-image: none; mask-image: none; }
-  .stage::after { background: linear-gradient(0deg, var(--noche) 10%, rgb(11 21 48 / .55)); }
+/* Menú móvil */
+.menu-btn {
+  display: none; width: 48px; height: 48px; padding: 0; border-radius: 12px; cursor: pointer;
+  background: rgb(255 255 255 / .08); border: 1px solid rgb(255 255 255 / .25); color: var(--blanco);
+  align-items: center; justify-content: center;
+}
+.menu-btn svg { width: 24px; height: 24px; fill: none; stroke: currentColor; stroke-width: 2; stroke-linecap: round; }
+.hero-art { display: none; }
+
+@media (max-width: 1100px) {
   .pillars { grid-template-columns: repeat(2, minmax(0, 1fr)); row-gap: 1.25rem; }
   .pillars li:nth-child(3) { border-left: 0; padding-left: 0; }
+}
+
+@media (max-width: 960px) {
+  /* Menú desplegable */
+  .nav-wrap { position: relative; }
+  .menu-btn { display: inline-flex; }
+  .nav {
+    display: none; position: absolute; right: 0; top: calc(100% + .5rem); z-index: 20;
+    flex-direction: column; align-items: stretch; gap: 0; min-width: 240px; padding: .5rem;
+    background: var(--noche-2); border: 1px solid rgb(255 255 255 / .12); border-radius: 16px;
+    box-shadow: 0 24px 48px -12px rgb(0 0 0 / .6);
+  }
+  .nav.is-open { display: flex; }
+  .nav a { padding: 0 1rem; border-radius: 10px; }
+  .nav a:hover { background: rgb(255 255 255 / .06); }
+  .nav .nav-cta { margin-top: .25rem; justify-content: center; }
+
+  /* La montaña pasa a ser una imagen visible bajo el texto */
+  .stage::before, .stage::after { display: none; }
+  .hero-art {
+    display: block; position: relative; margin-top: 2.25rem; height: clamp(220px, 52vw, 380px);
+    border-radius: 20px; overflow: hidden;
+    background: url("hero-montana.jpg") center 35% / cover no-repeat;
+    box-shadow: 0 0 0 1px rgb(255 255 255 / .1), 0 24px 48px -20px rgb(0 0 0 / .7);
+  }
+  .hero-art::after {
+    content: ""; position: absolute; inset: 0;
+    background: linear-gradient(180deg, rgb(11 21 48 / 0) 55%, rgb(11 21 48 / .55));
+  }
   .agent { grid-template-columns: 1fr; }
   .steps { grid-template-columns: repeat(2, minmax(0, 1fr)); }
 }
 @media (max-width: 640px) {
-  .nav li:not(:last-child) { display: none; }
   .brand-name { font-size: 1.5rem; }
+  .eyebrow { letter-spacing: .2em; font-size: .72rem; }
+  .eyebrow::before { width: 32px; }
+  .actions .btn { width: 100%; justify-content: center; }
   .pillars, .services, .steps { grid-template-columns: 1fr; }
   .pillars li, .pillars li + li { border-left: 0; padding-left: 0; }
+  .service { padding: 1.5rem 1.4rem; }
   .msg { max-width: 92%; }
 }
 @media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } }
