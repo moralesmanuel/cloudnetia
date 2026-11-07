@@ -14,7 +14,7 @@
   <meta property="og:locale" content="es_CL">
   <meta property="og:image" content="https://cloudnet.cl/og.png">
   <meta name="twitter:card" content="summary_large_image">
-  <meta name="theme-color" content="#2a3ab0">
+  <meta name="theme-color" content="#141c5c">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Schibsted+Grotesk:ital,wght@0,400;0,500;0,700;0,800;1,400&display=swap" rel="stylesheet">
@@ -23,10 +23,26 @@
 <body>
   <a class="skip" href="#contenido">Saltar al contenido</a>
 
+  <main>
+  <div class="stage">
+  <svg class="stage-net" viewBox="0 0 1200 700" preserveAspectRatio="xMidYMid slice" aria-hidden="true">
+    <g stroke="currentColor" stroke-width="1.5" fill="none" opacity=".55">
+      <path d="M640 520 L760 300 L940 230 L1100 360 L1050 540 L640 520 Z"/>
+      <path d="M760 300 L860 440 L1100 360 M860 440 L1050 540 M860 440 L640 520"/>
+      <path d="M940 230 L1010 90 L1180 140 L1100 360 M1010 90 L820 60 L760 300"/>
+      <path d="M640 520 L520 640 L800 690 L1050 540"/>
+    </g>
+    <g fill="currentColor">
+      <circle cx="640" cy="520" r="10"/><circle cx="760" cy="300" r="13"/><circle cx="940" cy="230" r="18"/>
+      <circle cx="1100" cy="360" r="12"/><circle cx="1050" cy="540" r="9"/><circle cx="1010" cy="90" r="8"/>
+      <circle cx="820" cy="60" r="6"/><circle cx="1180" cy="140" r="7"/><circle cx="520" cy="640" r="6"/><circle cx="800" cy="690" r="8"/>
+    </g>
+    <circle class="stage-node" cx="860" cy="440" r="11"/>
+  </svg>
   <header class="top">
     <div class="wrap top-inner">
       <a class="brand" href="/" aria-label="Cloudnet IA, inicio">
-        <img src="logo.svg" alt="" width="34" height="34">
+        <img src="logo-light.svg" alt="" width="34" height="34">
         <span class="brand-name">cloudnet<span class="brand-ia">IA</span></span>
       </a>
       <nav aria-label="Principal">
@@ -39,8 +55,7 @@
     </div>
   </header>
 
-  <main id="contenido">
-    <section class="hero">
+    <section class="hero" id="contenido">
       <div class="wrap hero-grid">
         <div class="hero-copy">
           <h1>IA que trabaja para tu negocio.</h1>
@@ -70,6 +85,7 @@
         </figure>
       </div>
     </section>
+  </div>
 
     <section id="soluciones" class="section">
       <div class="wrap">

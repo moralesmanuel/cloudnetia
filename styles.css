@@ -7,6 +7,10 @@
   --lapis-oscuro: #1d2a86;
   --cielo: #c9dae3;       /* bordes y apoyos */
   --arena: #ede4d3;       /* banda cálida */
+  --lapis-noche: #141c5c; /* fondo del hero */
+  --atacama: #ffb23f;     /* acento: sol de Atacama */
+  --atacama-oscuro: #f29a12;
+  --cielo-vivo: #7fd4f5;
   --blanco: #ffffff;
 
   --font: "Schibsted Grotesk", system-ui, -apple-system, "Segoe UI", sans-serif;
@@ -15,7 +19,7 @@
   --step-1: 1.25rem;
   --step-2: 1.6rem;
   --step-3: clamp(1.9rem, 3.2vw, 2.6rem);
-  --step-4: clamp(2.6rem, 6.4vw, 4.75rem);
+  --step-4: clamp(2.9rem, 7.4vw, 5.75rem);
 
   --radius-s: 6px;
   --radius-l: 22px;
@@ -210,3 +214,47 @@ a { color: var(--lapis); }
   .steps { grid-template-columns: 1fr; }
   .msg { max-width: 92%; }
 }
+
+/* ===== Versión de alto contraste ===== */
+.stage {
+  position: relative; overflow: hidden; isolation: isolate;
+  background:
+    radial-gradient(60% 80% at 85% 40%, rgb(42 58 176 / .9), transparent 70%),
+    var(--lapis-noche);
+  color: var(--blanco);
+}
+.stage-net {
+  position: absolute; inset: 0; width: 100%; height: 100%; z-index: -1;
+  color: var(--cielo-vivo); opacity: .35;
+}
+.stage-node { fill: var(--atacama); }
+.stage .brand, .stage .nav a { color: var(--blanco); }
+.stage .nav a:hover { color: var(--atacama); }
+.stage .nav .nav-cta { border-color: var(--atacama); color: var(--atacama); }
+.stage .nav .nav-cta:hover { background: var(--atacama); color: var(--lapis-noche); }
+.stage .brand-ia { background: var(--atacama); color: var(--lapis-noche); }
+.stage .hero h1 { color: var(--blanco); }
+.stage .lead { color: rgb(255 255 255 / .82); }
+.stage :focus-visible { outline-color: var(--atacama); }
+
+.btn-primary { background: var(--atacama); color: var(--lapis-noche); }
+.btn-primary:hover { background: var(--atacama-oscuro); }
+.stage .btn-ghost { color: var(--blanco); border-color: rgb(255 255 255 / .6); }
+.stage .btn-ghost:hover { background: var(--blanco); color: var(--lapis-noche); border-color: var(--blanco); }
+
+.stage .chat {
+  box-shadow: 0 0 0 1px rgb(255 255 255 / .08), 0 30px 60px -20px rgb(0 0 0 / .55);
+}
+.stage .chat figcaption { color: var(--grafito-suave); }
+.event { background: #fff1d6; color: #7a4a00; }
+
+.steps li::before { color: var(--lapis); }
+.principle-list strong { color: var(--lapis); }
+
+.contact { background: var(--atacama); color: var(--lapis-noche); }
+.contact p { opacity: 1; }
+.contact .btn-light { background: var(--lapis-noche); color: var(--blanco); }
+.contact .btn-light:hover { background: var(--lapis); }
+.contact :focus-visible { outline-color: var(--lapis-noche); }
+.stage .chat { color: var(--grafito); }
+.stage .hero h1 { max-width: 12.5ch; }
