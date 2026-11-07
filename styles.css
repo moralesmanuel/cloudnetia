@@ -48,7 +48,7 @@ a { color: var(--azul); }
 }
 .stage::before {
   content: ""; position: absolute; inset: 0 0 0 auto; width: min(62%, 980px); z-index: -2;
-  background: url("hero-montana.jpg") center / cover no-repeat;
+  background: url("hero-cordillera.svg") center / cover no-repeat;
   -webkit-mask-image: linear-gradient(90deg, transparent 0%, #000 40%);
   mask-image: linear-gradient(90deg, transparent 0%, #000 40%);
 }
